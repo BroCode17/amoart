@@ -6,6 +6,8 @@ import CarosalTwo from "@/components/CarosalTwo";
 import Testimonials from "@/components/Testimonials";
 import FrameAnArt from "@/components/FrameAnArt";
 import Uploader from "@/components/Uploader";
+import { imagesArray } from "../../utils/data";
+import C from "@/components/C";
 
 export default function Home() {
   return (
@@ -27,7 +29,7 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <section>
+      <section className="">
         <Carosal />
       </section>
 
@@ -46,6 +48,7 @@ export default function Home() {
       <section>
         <Uploader />
       </section>
+      <C />
     </main>
   );
 }
