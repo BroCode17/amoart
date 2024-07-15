@@ -8,27 +8,16 @@ import FrameAnArt from "@/components/FrameAnArt";
 import Uploader from "@/components/Uploader";
 import { imagesArray } from "../../utils/data";
 import C from "@/components/C";
+import Footer from "@/components/Footer";
+import Logo from "@/components/Logo";
+import ExploreMoreBtn from "@/components/ExploreMoreBtn";
+import LetConnect from "@/components/LetConnect";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <main className="">
-      <header className="h-[81px] bg-black flex items-center justify-center ">
-        <div className=" text-white flex justify-between w-5/6 2xl:w-4/6 items-center leading-5">
-          <h1 className={`${Ink_Free.className} text-2xl`}>Amo.arte</h1>
-          <div>
-            <ul
-              className={`flex gap-5 ${ITC_Font.className} font-normal text-sm`}
-            >
-              <li>Home</li>
-              <li>About Artist</li>
-              <li>Galley</li>
-              <li>Shop</li>
-              <li>Event/Exhibition</li>
-              <li>FAQs</li>
-            </ul>
-          </div>
-        </div>
-      </header>
+
       <section className="">
         <Carosal />
       </section>
@@ -42,13 +31,14 @@ export default function Home() {
       <section className="flex justify-center mt-10">
         <FrameAnArt />
       </section>
-      <section>
+      <section className="bg-black flex justify-center">
         <Testimonials />
       </section>
+
       <section>
-        <Uploader />
+        <LetConnect />
       </section>
-      <C />
+  
     </main>
   );
 }

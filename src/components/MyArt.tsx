@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import ImageContainer from "./ImageContainer";
 import Row2Image from "./Row2Imge";
 import { ITC_Font } from "@/app/local-fonts/local";
+import HeadTitle from "./HeadTitle";
 
 
 
@@ -11,7 +12,7 @@ const MyArtPieces = () => {
       <div className="grid  grid-cols-3 h-[600px] grid-rows-3 gap-3 w-[900px]">
         <Row2Image text="For Your Eyes Only" imgUrl={'brothers'} />
         <div className="col-span-2 pt-5">
-          <h1 className={`pl-5 font-bold text-[30px] ${ITC_Font.className}`}>My Art Pieces</h1>
+          <HeadTitle title="My Art Pieces" />
           <div className="pl-2 text-sm mt-3 w-[90%]">
             <p className="text-justify">
               Collection of art curated by Amo-Mensah Amofa. Artwork designed as

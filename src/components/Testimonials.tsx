@@ -1,24 +1,27 @@
 import { ITC_Font } from "@/app/local-fonts/local";
 import React from "react";
+import HeadTitle from "./HeadTitle";
+import Card from "./Card";
+import TestCard from "./TestCard";
+import IntroBox from "./IntroBox";
+import Container from "./Container";
 
 const Testimonials = () => {
   return (
-    <div className="text-white bg-black max-md:px-4 flex flex-col gap-5 justify-center">
-      <div className="">
-        <h1 className={`${ITC_Font.className}`}>Testimonials</h1>
-        <div className="w-3/5">
-          <p className="text-sm pt-2">
-            Collection of art curated by Amo-Mensah Amofa. Artwork designed as
-            more than a display but meant to ignite conversations{" "}
-          </p>
+    <Container>
+       <IntroBox className="mt-10" title="Testimonails" description="Collection of art curated by Amo-Mensah Amofa. Artwork designed as
+              more than a display but meant to ignite conversations" />
+        <div className="  flex flex-col-reverse md:flex-row gap-4 ">
+          <div className="flex flex-row md:flex-col gap-5 md:w-[36%]" >
+            <TestCard />
+            <TestCard />
+          </div>
+          {/* Video */}
+          <div className="col-span-2  bg-soft flex-1 flex items-center justify-center">
+            Video
+          </div>
         </div>
-      </div>
-      <div className="h-96">
-      <div className="bg-[#BCBCBC] h-full w-full">
-            Tell me something
-        </div>
-      </div>
-    </div>
+    </Container>
   );
 };
 

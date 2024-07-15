@@ -3,7 +3,7 @@ import ImageContainerTwo from "./ImageContanierTwo";
 
 const Card = ({imgUrl, text}: {imgUrl: string; text:string}) => {
   return (
-    <div className="relative h-[260px] cursor-pointer">
+    <div className="relative h-[260px] cursor-pointer drop-shadow-md shadow-md">
      <ImageContainerTwo imgUrl={imgUrl} text={text} />
       <div className="h-14 absolute w-full bg-white bg-opacity-50 bottom-0 overflow-hidden">
         <div className="flex px-5 justify-between items-center py-2">
