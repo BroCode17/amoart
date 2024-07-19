@@ -17,8 +17,8 @@ const FrameAnArt = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <Card imgUrl="one" text="one" />
         <Card imgUrl="two" text="two" />
-        <Card imgUrl="thr.png" text="thr" />
-        <Card imgUrl="four.png" text="four" />
+        <Card imgUrl="thr" text="thr" flag={true} />
+        <Card imgUrl="four" text="four" flag={true}/>
         <Card imgUrl="five" text="five" />
         <Card imgUrl="six" text="six" />
       </div>

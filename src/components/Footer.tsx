@@ -18,7 +18,8 @@ const Footer = () => {
                 ButtonLinksData.map((item, index) => <ButtonLinks key={index} href={item.href} type={item.type} />)
               }
           </div>
-          <p className="text-center">860-328-6319 | amensah8@gmail.com <br/>CA Califonia </p>
+          <p className="text-center">860-328-6319 amensah8@gmail.com</p> 
+          <p>CA Califonia </p>
         </div>
         <div>
           <span className="text-xs text-[#D9D9D9] font-light">

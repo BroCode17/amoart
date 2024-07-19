@@ -112,3 +112,113 @@ export const recentWorkData = [
         flag: false,
     }
 ]
+
+
+export const pointsData = [
+    {
+        desc: "Collaborative effort, where ideas, preferences and inspiration are shared. Whether it's a specific concept or just a general theme"
+    },
+    {
+        desc: "Based on our consultation, preliminary concepts will be drafted for your approval. In the form of sketches or digital mockups to give you a clear idea of the proposed art work."
+    },
+    {
+        desc: "Upon finalizing the concept, contract will be provided outlining scope of work, timeline, pricing details and terms of agreement to ensure transparency."
+    },
+    {
+        desc: "After signing our contract, curation of custom pieces will begin. Throughout the stage, regular updates will be provided and there will always be an opportunity to provide feedback throughout the process."
+    },
+    {
+        desc: "Upon completion, you will review the final piece. Artwork will be carefully package and shipped to specified address."
+    },
+]
+
+export const leftPointsData = [
+    {
+        desc: "UNIQUE & PERSONAL - Guaranteed one-of-a-kind piece, tailored to your personal taste and preferences"
+    },
+    {
+        desc: "COLLABORATIVE PROCESS - Value placed on your input and ensure that you are involved in every step of creation process"
+    },
+    {
+        desc: "QUALITY CRAFTSMANSHIP - Commitment to excellence, high-quality materials and techniques are used to create lasting works of art"
+    }
+]
+
+
+export const shopData = [
+    {
+        url: 'one'
+    },
+    {
+        url: 'two'
+    },
+    {
+        url: 'chal'
+    },
+    {
+        url: 'five'
+    },
+    {
+        url: 'six'
+    },
+    {
+        url: 'one'
+    },
+    {
+        url: 'two'
+    },
+    {
+        url: 'chal'
+    },
+    {
+        url: 'five'
+    },
+    {
+        url: 'six'
+    },
+    {
+        url: 'one'
+    },
+    {
+        url: 'two'
+    },
+    {
+        url: 'chal'
+    },
+    {
+        url: 'five'
+    },
+    {
+        url: 'six'
+    },
+    {
+        url: 'one'
+    },
+    {
+        url: 'two'
+    },
+    {
+        url: 'chal'
+    },
+    {
+        url: 'five'
+    },
+    {
+        url: 'six'
+    },
+    {
+        url: 'one'
+    },
+    {
+        url: 'two'
+    },
+    {
+        url: 'chal'
+    },
+    {
+        url: 'five'
+    },
+    {
+        url: 'six'
+    },
+]

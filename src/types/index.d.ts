@@ -19,3 +19,9 @@ export type IntroBoxTypes  = {
     description: string;
     className?: string;
 }
+
+export type BannerProps = {
+    bannerImgUrl: string;
+    bannerTitle: string;
+    titleColor?: string;
+}

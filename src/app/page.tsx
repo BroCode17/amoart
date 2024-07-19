@@ -1,3 +1,5 @@
+'use client'
+import { useState } from "react";
 import Image from "next/image";
 import MyArtPieces from "@/components/MyArt";
 import { ITC_Font, Ink_Free } from "./local-fonts/local";
@@ -13,11 +15,13 @@ import Logo from "@/components/Logo";
 import ExploreMoreBtn from "@/components/ExploreMoreBtn";
 import LetConnect from "@/components/LetConnect";
 import Header from "@/components/Header";
+import MobileNav from "@/components/MobileNave";
 
 export default function Home() {
+  const [showMobileNave, setShowMobileNave] = useState(false);
   return (
-    <main className="">
-
+    <main className="w-full overflow-hidden">
+      <MobileNav show={showMobileNave} />
       <section className="">
         <Carosal />
       </section>

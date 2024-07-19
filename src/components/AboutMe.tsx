@@ -8,7 +8,7 @@ const AboutMe = () => {
   return (
     <div className="text-black flex justify-center mt-20 px-10 md:px-0">
       <Container className="bg-white">
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-2 gap-10 max-sm:grid-cols-1">
           <div className="flex flex-col gap-2 text-justify text-sm">
             <p>
               Amo-Mensah was born in Agona, Ghana and is a self-taught artist

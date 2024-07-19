@@ -1,18 +1,39 @@
 import AboutMe from "@/components/AboutMe";
 import HeadTitle from "@/components/HeadTitle";
+import Image from "next/image";
 import React from "react";
+import { ITC_Font } from "../local-fonts/local";
 
 const page = () => {
   return (
     <div className="min-h-lvh ml flex flex-col">
-      <div className="bg-soft h-96 flex items-center justify-center w-full border border-red-600 relative">
-        <div className="w-[920px]">
-          <div className="bg-white h-5/6 w-[280px] -ml-10">
-            {/* Image */}
-            hello
-          </div>
-          <div className="z-10 bg-[#3678F6] absolute top-1/2 right-1/2 transform translate-x-1/3 -translate-y-1/2">
-            <HeadTitle title="Amo-Mensah Amofa" />
+      <div className="bg-soft h-[26rem] flex flex-col md:flex-row items-center justify-center w-full border border-red-600 relative py-5">
+        <div className="flex h-dvh items-center justify-center">
+          <div className="border-1 flex h-96 items-center justify-center border-red-500 max-sm:flex-col-reverse max-sm:gap-2 py-6">
+            <div className="h-full min-w-[300px] bg-gray-400 md:w-[330px]">
+              <Image
+                src="/images/yy.png"
+                alt="Amofa"
+                width={500}
+                height={500}
+                className={` w-full object-contain h-full`}
+              />
+            </div>
+            <div className="z-10 w-[300px]  sm:-ml-[150px] flex flex-col">
+              <h1
+                className={`self-end font-bold ${ITC_Font.className} sm:text-xl`}
+              >
+                About Me!
+              </h1>
+              <div className="bg-[#3678F6] bg-opacity-[46%] sm:p-6">
+                <h1 className={`font-bold ${ITC_Font.className} sm:text-xl`}>
+                  Amo-Mensah Amofah
+                </h1>
+                <p className="text-sm">
+                  A self-taught artist based in Glastonbury, Connecticut
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
