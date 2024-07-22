@@ -1,3 +1,4 @@
+import G from '@/components/animations/G'
 import Commissions from '@/components/Comission'
 import React from 'react'
 

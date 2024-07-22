@@ -1,32 +1,57 @@
 "use client";
 import { ITC_Font } from "@/app/local-fonts/local";
-import React, { useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import { linkData } from "../../utils/data";
 import Link from "next/link";
-import { TiThMenuOutline } from "react-icons/ti";
-import MobileNav from "./MobileNave";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(useGSAP);
 const Header = () => {
+  const container = useRef(null);
 
+  useGSAP(
+    () => {
+      const init = () => {
+        const t1 = gsap.timeline();
+        t1.from("ul", {
+          xPercent: "-100",
+          duration: 1,
+          delay: 0.1,
+          visibility: 0
+        });
+        t1.to('ul', {
+          autoAlpha: 1
+        })
+      };
+      init()
+    },
+    { scope: container }
+  );
 
   return (
-    <header className="h-[81px] bg-black flex items-center justify-center ">
-        <div className=" text-white flex justify-between w-5/6 2xl:w-4/6 items-center leading-5">
-          <Logo />
-          <div className="max-sm:hidden">
-            <ul
-              className={`flex gap-3 ${ITC_Font.className} font-normal text-sm`}
-              >
-              {linkData.map((item, index) => (
-                <Link key={index} href={item.url}>
-                  {item.name}
-                </Link>
-              ))}
-            </ul>
-          </div>
+    <header
+      className="h-[81px] bg-black flex items-center justify-center "
+      ref={container}
+      id="head-main"
+    >
+      <div className=" text-white flex justify-between w-5/6 2xl:w-4/6 items-center leading-5">
+        <Logo />
+        <div className="max-sm:hidden">
+          <ul
+            className={`flex gap-3 ${ITC_Font.className} font-normal text-sm invisible`}
+          >
+            {linkData.map((item, index) => (
+              <Link key={index} href={item.url}>
+                {item.name}
+              </Link>
+            ))}
+          </ul>
         </div>
-      </header>)
+      </div>
+    </header>
+  );
 };
 
 export default Header;

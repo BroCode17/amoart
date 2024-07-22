@@ -5,6 +5,8 @@ export type Row2ImageParam = {
     imgUrl: string;
     color?: string;
     flag?: boolean;
+    ref?: Element;
+    className?: string;
     
 }
 
@@ -25,3 +27,4 @@ export type BannerProps = {
     bannerTitle: string;
     titleColor?: string;
 }
+

@@ -5,6 +5,7 @@ import carosal from "../../public/images/carosal.jpeg";
 import { Button } from "./ui/button";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { imagesArray } from "../../utils/data";
+import SlideNextButton from "./animations/swipper/SwiperBtn";
 
 const Carosal = () => {
   const [currSlide, setCurrSlide] = useState(0);
@@ -76,6 +77,7 @@ const Carosal = () => {
             >
               <FaChevronLeft />
             </Button>
+            
 
             <Button
               className="bg-transparent border w-10 rounded-full font-bold  hover:bg-black hover:text-white ml-6"
@@ -83,6 +85,7 @@ const Carosal = () => {
             >
               <FaChevronRight />
             </Button>
+
           </div>
         </div>
       </div>

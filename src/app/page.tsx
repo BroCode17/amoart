@@ -1,36 +1,30 @@
-'use client'
-import { useState } from "react";
-import Image from "next/image";
+"use client";
 import MyArtPieces from "@/components/MyArt";
-import { ITC_Font, Ink_Free } from "./local-fonts/local";
 import Carosal from "@/components/Carosal";
 import CarosalTwo from "@/components/CarosalTwo";
 import Testimonials from "@/components/Testimonials";
 import FrameAnArt from "@/components/FrameAnArt";
-import Uploader from "@/components/Uploader";
-import { imagesArray } from "../../utils/data";
-import C from "@/components/C";
-import Footer from "@/components/Footer";
-import Logo from "@/components/Logo";
-import ExploreMoreBtn from "@/components/ExploreMoreBtn";
 import LetConnect from "@/components/LetConnect";
-import Header from "@/components/Header";
-import MobileNav from "@/components/MobileNave";
+import G from "@/components/animations/G";
+import CustomSwiper from "@/components/animations/swipper/Slide";
 
 export default function Home() {
-  const [showMobileNave, setShowMobileNave] = useState(false);
   return (
     <main className="w-full overflow-hidden">
-      <MobileNav show={showMobileNave} />
-      <section className="">
-        <Carosal />
+      <section className="w-full relative">
+        {/* <Carosal /> */}
+        <CustomSwiper />
       </section>
 
       <section className="">
         <MyArtPieces />
       </section>
-      <section className="mt-10 h-[500px] lg:h-[550px] border  flex justify-center  relative bg-car-image  bg-black  bg-blend-overlay bg-opacity-50">
-        <CarosalTwo />
+      <section className="mt-10  border h-[500px] lg:h-[550px]  w-full relative">
+        <div className=" flex justify-center  relative bg-car-image h-full  bg-black  bg-blend-overlay bg-opacity-50 max-xl:px-2">
+          <CarosalTwo />
+        </div>
+
+        <G />
       </section>
       <section className="flex justify-center mt-10">
         <FrameAnArt />
@@ -42,7 +36,6 @@ export default function Home() {
       <section>
         <LetConnect />
       </section>
-  
     </main>
   );
 }

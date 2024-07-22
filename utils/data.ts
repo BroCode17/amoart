@@ -97,7 +97,7 @@ export const ButtonLinksData = [
 export const recentWorkData = [
     {
         url: "lad",
-        flag: true,
+        flag: false,
     },
     {
         url: "emb",
@@ -220,5 +220,29 @@ export const shopData = [
     },
     {
         url: 'six'
+    },
+]
+
+
+export const itemSizeArray = [
+    {
+        size: 'Small',
+        x: 20,
+        y: 30,
+    },
+    {
+        size: 'Medium',
+        x: 20,
+        y: 30,
+    },
+    {
+        size: 'Large',
+        x: 20,
+        y: 30,
+    },
+    {
+        size: 'Extra Large',
+        x: 20,
+        y: 30,
     },
 ]

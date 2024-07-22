@@ -13,7 +13,7 @@ const RecentWork = () => {
       />
       <div className="h-64 flex gap-2 justify-start mt-5">
         {recentWorkData.map((item, index) => (
-          <div className="w-1/4">
+          <div className="w-1/4" key={index}>
             <ImageContainer
               key={index}
               imgUrl={item.url}

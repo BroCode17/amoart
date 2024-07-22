@@ -3,17 +3,67 @@ import ImageContainer from "./ImageContainer";
 import Row2Image from "./Row2Imge";
 import { ITC_Font } from "@/app/local-fonts/local";
 import HeadTitle from "./HeadTitle";
+import gsap from "gsap";
+import { useGSAP, } from "@gsap/react";
+import { useInView } from "react-intersection-observer";
+import { useEffect, useRef, useState } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const MyArtPieces = () => {
+  const myRef = useRef(null);
+  const[view, setView] = useState()
+  const { ref, inView } = useInView({ threshold: 0 });
+
+  useGSAP(() => {
+      const t1 = gsap.timeline();
+      t1.from('.title', {
+        opacity: 0,
+        y: '-10'
+      }).from('.para', {
+        opacity: 0,
+        y: '-5'
+      })
+      t1.to('.title', {
+        opacity: 1,
+        duration: 2
+      })
+
+  
+    
+      t1.to('.para', {
+        autoAlpha: 1,
+        duration: 1,
+      })
+
+
+
+      // gsap.to('.para', {
+      //   scrollTrigger: {
+      //     trigger: '.para',
+      //     toggleActions: 'restart pause reverse pause'
+      //   },
+      //   xPercent: '200',
+      //   translateX: 0,
+      //   duration: 3
+      // })
+  }, { scope: myRef });
+
+  useEffect(() => {
+     
+     
+  }, [myRef])
+
   return (
-    <section className=" flex justify-center mt-10">
+    <section className=" flex justify-center mt-10" ref={myRef}>
       <div className="grid  grid-cols-3 h-[600px] grid-rows-3 gap-3 w-[900px]">
-        <Row2Image text="For Your Eyes Only" imgUrl={'brothers'} />
+        <Row2Image text="For Your Eyes Only" imgUrl={"brothers"} />
         <div className="col-span-2 pt-5">
-          <HeadTitle title="My Art Pieces" />
-          <div className="pl-2 text-sm mt-3 w-[90%]">
+          <div ref={ref}>
+            <HeadTitle title="My Art Pieces" className={`title  opacity-0`} />
+          </div>
+          <div className="pl-2 text-sm mt-3 w-[90%] para invisible">
             <p className="text-justify">
               Collection of art curated by Amo-Mensah Amofa. Artwork designed as
               more than a display but meant to ignite conversations that
@@ -26,8 +76,10 @@ const MyArtPieces = () => {
         <Row2Image text="Fall of Man" imgUrl="fall" color="black" />
         <Row2Image text="Move with Me" imgUrl="oneman" />
         <div className="bg-pink-500 relative">
-          <ImageContainer text="House of Blue" imgUrl="blue"/>
-          <span className={`absolute bottom-5 left-5  text-white font-bold text-sm ${ITC_Font.className}`}>
+          <ImageContainer text="House of Blue" imgUrl="blue" />
+          <span
+            className={`absolute bottom-5 left-5  text-white font-bold text-sm ${ITC_Font.className}`}
+          >
             &quot;House of Blue&quot;
           </span>
         </div>

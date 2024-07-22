@@ -7,6 +7,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { Button } from "./ui/button";
 import { galleryCarouselImages } from "../../utils/data";
 import '@/components/css/cus.module.css'
+import G from "./animations/G";
 
 const CarosalTwo = () => {
   const [currSlide, setCurrSlide] = useState(0);
@@ -23,18 +24,19 @@ const CarosalTwo = () => {
   }
 
   return (
-    <div className="w-[900px] text-white flex flex-col gap-5 justify-center max-md:px-4 h-96">
-      <div className="">
+    <div className="w-[900px] text-white flex flex-col gap-5 
+     max-md:px-4 h-96 mt-10">
+      <div className="relative">
         <h1 className={`${ITC_Font.className} text-xl`}>Gallery Carousel</h1>
-        <div className="w-3/5">
-          <p className="text-sm pt-2">
+        <div className="w-3/5 absolute ">
+          <p className="text-sm pt-2 sm:h-10 absolute z-10 ">
             Collection of art curated by Amo-Mensah Amofa. Artwork designed as
             more than a display but meant to ignite conversations{" "}
           </p>
         </div>
       </div>
       <div className="flex">
-         <div className="flex flex-1 items-center justify-between gap-3">
+         {/* <div className="flex flex-1 items-center justify-between gap-3">
           <Button className="bg-transparent border w-10 rounded-full fon</divt-bold  hover:bg-white hover:text-black" onClick={prevSlide}>
             <FaChevronLeft />
           </Button>
@@ -57,12 +59,13 @@ const CarosalTwo = () => {
           <div className="">
             <ImageContainerTwo imgUrl="chal" text="lady" />
           </div>  */}
-           <Button className="bg-transparent border w-10 rounded-full font-bold  hover:bg-white hover:text-black" onClick={nextSlide}>
-            <FaChevronRight />
+           {/* <Button className="bg-transparent border w-10 rounded-full font-bold  hover:bg-white hover:text-black" onClick={nextSlide}> */}
+            {/* <FaChevronRight />
           </Button> 
-        </div>
+        </div>  */}
   
       </div>
+    
     </div>
   );
 };

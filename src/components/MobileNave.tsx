@@ -20,7 +20,7 @@ type SheetSide = (typeof SHEET_SIDES)[number]
 
 const  MobileNav = ({show}:{show: boolean}) => {
   return (
-        show && <div className="grid grid-cols-2 gap-2 sm:hidden">
+        show && <div className="grid grid-cols-2 gap-2">
         {SHEET_SIDES.map((side) => (
           <Sheet key={side}>
             <SheetTrigger asChild>

@@ -1,11 +1,15 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
+import Main from "@/components/Main";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"],
-  weight: ['100', '200', '300', '400', '500']
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -18,13 +22,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+ 
+
+
   return (
     <html lang="en" className="">
-      <body className={`${inter.className} border-pink-600 border-2 `}>
-        <Header />
+      <body className={`${inter.className}`}>
+      <Header />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }
