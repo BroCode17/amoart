@@ -7,20 +7,14 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { ChangeEvent } from "react";
 import UserInput from "./UserInput";
+import { useToast } from "@/app/shop/_components/toast-context";
 
 export enum FormFiedType {
   NAME = "username",
   DESC = "desc",
+  ZIP = "zip"
 }
 
 const formSchema = z.object({
@@ -35,6 +29,8 @@ const formSchema = z.object({
 
 const UserForm = () => {
   // ...
+  const toast = useToast();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -45,6 +41,7 @@ const UserForm = () => {
   });
 
   const onSubmit = (e: any) => {
+    toast?.open('Information Sent!')
     console.log(e);
   };
 
@@ -84,6 +81,7 @@ const UserForm = () => {
               label="Lets us know what you need"
               placeholder="Describe what you need us to do for you..."
               textArea={true}
+        
             />
           </div>
         </div>

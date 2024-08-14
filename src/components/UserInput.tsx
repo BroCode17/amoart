@@ -10,7 +10,12 @@ import {
 import { Control } from "react-hook-form";
 import { FormFiedType } from "./UserForm";
 import { Input } from "./ui/input";
-import { Source_Sans_Pro_400, Source_Sans_Pro_Bold, Source_Sans_Pro_Light, Source_Sans_Pro_SemiBold } from "@/app/local-fonts/local";
+import {
+  Source_Sans_Pro_400,
+  Source_Sans_Pro_Bold,
+  Source_Sans_Pro_Light,
+  Source_Sans_Pro_SemiBold,
+} from "@/app/local-fonts/local";
 import { Textarea } from "./ui/textarea";
 
 interface CustomProps {
@@ -32,17 +37,34 @@ const Render = ({ field, props }: { field: any; props: CustomProps }) => {
     case FormFiedType.NAME:
       return (
         <FormControl className="">
-               <Input placeholder={placeholder} {...field}  className={`rounded-xs placeholder:text-form-soft ${Source_Sans_Pro_400.className} `}/>
+          <Input
+            placeholder={placeholder}
+            {...field}
+            className={`rounded-xs placeholder:text-form-soft ${Source_Sans_Pro_400.className} text-md `}
+          />
         </FormControl>
       );
     case FormFiedType.DESC:
       return (
-        <FormControl className={`h-[250px] placeholder:text-form-soft  ${Source_Sans_Pro_400.className}`}>
-         <Textarea
-                  placeholder={placeholder}
-                  className="resize-none"
-                  {...field}
-                />
+        <FormControl
+          className={`h-[250px] placeholder:text-form-soft  ${Source_Sans_Pro_400.className} rounded-none text-md`}
+        >
+          <Textarea
+            placeholder={placeholder}
+            className="resize-none"
+            {...field}
+          />
+        </FormControl>
+      );
+    case FormFiedType.ZIP:
+      return (
+        <FormControl className="">
+          <Input
+            placeholder={placeholder}
+            {...field}
+            className={`rounded-xs placeholder:text-form-soft ${Source_Sans_Pro_400.className} text-md `}
+            type="number"
+          />
         </FormControl>
       );
     default:
@@ -51,22 +73,22 @@ const Render = ({ field, props }: { field: any; props: CustomProps }) => {
 };
 
 const UserInput = (props: CustomProps) => {
-  const { control, label, name, textArea} = props;
+  const { control, label, name, textArea } = props;
   return (
     <div className={`w-full ${Source_Sans_Pro_400.className} `}>
-    <FormField
-      control={control}
-      name={name}
-      render={({ field }) => (
-        <FormItem className="">
-          <FormLabel className={`${textArea && 'text-md'}`}>{label}</FormLabel>
-           <Render field={field} props={props} />
-          {/* <FormDescription>This is your public display name.</FormDescription> */}
-          <FormMessage />
-        </FormItem>
-      )}
-      
-    />
+      <FormField
+        control={control}
+        name={name}
+        render={({ field }) => (
+          <FormItem className="">
+            <FormLabel className={`${textArea && "text-md"} text-md`}>
+              {label}
+            </FormLabel>
+            <Render field={field} props={props} />
+            <FormMessage />
+          </FormItem>
+        )}
+      />
     </div>
   );
 };

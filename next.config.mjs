@@ -11,7 +11,7 @@ const nextConfig = {
         ]
     },
     images: {
-        
+       // domains: ['example.com', 'res.cloudinary.com'],
         remotePatterns: [
             {
                 protocol:'https',
@@ -21,8 +21,15 @@ const nextConfig = {
             },
             {
                 hostname: 'images.pexels.com'
+            },
+            {
+                hostname: 'res.cloudinary.com'
             }
-        ]
+            
+               
+                
+        ],
+        
     }
 };
 

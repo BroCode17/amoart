@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./styles.css";
 
 import gsap from "gsap";
@@ -7,18 +7,28 @@ import { useGSAP } from "@gsap/react";
 import { Draggable, ScrollTrigger } from "gsap/all";
 import { galleryCarouselImages, shopData } from "../../../utils/data";
 import ImageContainerTwo from "../ImageContanierTwo";
+import { useGetAllProductQuery } from "@/_redux/services/productApi";
 
 gsap.registerPlugin(useGSAP, Draggable, ScrollTrigger);
 
 const G = () => {
   const container = useRef<HTMLInputElement>(null);
 
+  const [product, setProduct] = useState([]);
+  const { data, isSuccess, isLoading, isError } = useGetAllProductQuery("");
+
+  useEffect(() => {
+    if (isSuccess) {
+      setProduct(data.data);
+    }
+  }, [data, isSuccess]);
+
   useGSAP(() => {
     const images = gsap.utils.toArray(".item");
 
     const imageSize = images.length;
     const total = images.length;
-  
+
     const degree = 360 / total;
 
     const init = () => {
@@ -36,7 +46,6 @@ const G = () => {
         timeline.from(
           image,
           {
-       
             x: () =>
               index % 2
                 ? window.innerWidth + image.clientWidth * 4
@@ -47,7 +56,7 @@ const G = () => {
             autoAlpha: 1,
             ease: "power4.out",
             duration: 1,
-            delay: 0.20 * Math.floor(index / 2),
+            delay: 0.2 * Math.floor(index / 2),
           },
           0
         );
@@ -116,167 +125,36 @@ const G = () => {
 
     init();
     draggable();
-
-   
-  },[]),
+  }, []),
     { scope: container };
 
   return (
     <div className="container">
       <div className="center">
         <div className="items" ref={container}>
-            {/* <div className="item"> 
+          {/* <div className="item"> 
             <div className="card">
               <img
                 className="image"
                 src="https://www.themoviedb.org/t/p/original/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg"
               />
             </div>
-          </div> */} 
-          {shopData.map((item, index) => (
-            <div className="item" key={index}>
-              <div className="card">
-                <ImageContainerTwo imgUrl={item.url} text={item.url} />
+          </div> */}
+          {isLoading && <div>Loading...</div>}
+          {isError && <div>Error</div>}
+
+          {isSuccess &&
+            product.slice(0, 15).map((item, index) => (
+              <div className="item" key={index}>
+                <div className="card">
+                <ImageContainerTwo
+                    imgUrl={item?.image?.public_src}
+                    text={item.description}
+                    flag={false}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-          {/* <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/original/aWh8R6jeAbmiB4TsF6CjYFrUsI8.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/w220_and_h330_face/3Tf8vXykYhzHdT0BtsYTp570JGQ.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/original/zxVEkxgreRkFkh1rBK85T2JyxFY.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/original/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/w220_and_h330_face/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/original/vKEBse3BPU7crfAjdPNaC6WePnO.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/w220_and_h330_face/mfnkSeeVOBVheuyn2lo4tfmOPQb.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/w220_and_h330_face/bCj4EfuehAlgBwVd3diyWyhuuau.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/original/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/original/aWh8R6jeAbmiB4TsF6CjYFrUsI8.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/w220_and_h330_face/3Tf8vXykYhzHdT0BtsYTp570JGQ.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/original/zxVEkxgreRkFkh1rBK85T2JyxFY.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/original/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/w220_and_h330_face/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/original/vKEBse3BPU7crfAjdPNaC6WePnO.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/w220_and_h330_face/mfnkSeeVOBVheuyn2lo4tfmOPQb.jpg"
-              />
-            </div>
-          </div>
-          <div className="item">
-            <div className="card">
-              <img
-                className="image"
-                src="https://www.themoviedb.org/t/p/w220_and_h330_face/bCj4EfuehAlgBwVd3diyWyhuuau.jpg"
-              />
-            </div>
-          </div>
-        </div> */}
+            ))}
         </div>
       </div>
     </div>

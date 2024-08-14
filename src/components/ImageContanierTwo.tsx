@@ -1,23 +1,36 @@
-import { Row2ImageParam } from "@/types"
-import Image from 'next/image'
+import { Row2ImageParam } from "@/types";
+import { CldImage } from "next-cloudinary";
+import Image from "next/image";
 
-
-const Render = ({imgUrl, text, flag}: Row2ImageParam) => {
-  switch(flag){
+const Render = ({ imgUrl, text, flag }: Row2ImageParam) => {
+  switch (flag) {
     case flag === true:
       return (
-        <Image src={`/images/${imgUrl+'.png'}`} alt={text} width={210} height={250} className=" w-full h-full object-cover " />
-      )
+        <CldImage
+          src={imgUrl}
+          alt={text}
+          width={210}
+          height={250}
+          className=" w-full h-full object-cover "
+          priority
+        />
+      );
     default:
       return (
-        <Image src={`/images/${imgUrl+'.jpeg'}`} alt={text} width={210} height={250} className=" w-full h-full object-cover " />
-      )
+        <CldImage
+          src={imgUrl}
+          alt={text}
+          width={210}
+          height={250}
+          className=" w-full h-full object-cover "
+          priority
+        />
+      );
   }
-}
+};
 
-const ImageContainerTwo = ({imgUrl, text, flag}: Row2ImageParam) => {
-   
-    return  <Render  imgUrl={imgUrl} text={text} flag={flag}/>
-  }
+const ImageContainerTwo = ({ imgUrl, text, flag }: Row2ImageParam) => {
+  return <Render imgUrl={imgUrl} text={text} flag={flag} />;
+};
 
-export default ImageContainerTwo
+export default ImageContainerTwo;

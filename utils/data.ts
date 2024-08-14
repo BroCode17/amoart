@@ -43,11 +43,7 @@ export const linkData = [
     {
         name: 'Events/Exhibition',
         url: '/events'
-    },
-    {
-        name: 'FAQs',
-        url: '/faqs'
-    },
+    }
 ]
 
 export const imagesArray = [

@@ -28,3 +28,27 @@ export type BannerProps = {
     titleColor?: string;
 }
 
+
+
+export type ActiveType ={
+    id: string;
+    isActive?: boolean;
+}
+
+
+export type EditProductProps = {
+    id?: string;
+    name?: string;
+    quantity?: number;
+    image?: Blob | File | any;
+    description?: string;
+    price?: number;
+}
+
+
+export type ProductDetails = {
+    name: string;
+    description: string;
+    price: string | number;
+    quantyt: number;
+}

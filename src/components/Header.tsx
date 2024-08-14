@@ -6,6 +6,7 @@ import { linkData } from "../../utils/data";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Cart from "./Cart";
 
 gsap.registerPlugin(useGSAP);
 const Header = () => {
@@ -19,13 +20,13 @@ const Header = () => {
           xPercent: "-100",
           duration: 1,
           delay: 0.1,
-          visibility: 0
+          visibility: 0,
         });
-        t1.to('ul', {
-          autoAlpha: 1
-        })
+        t1.to("ul", {
+          autoAlpha: 1,
+        });
       };
-      init()
+      init();
     },
     { scope: container }
   );
@@ -38,15 +39,14 @@ const Header = () => {
     >
       <div className=" text-white flex justify-between w-5/6 2xl:w-4/6 items-center leading-5">
         <Logo />
-        <div className="max-sm:hidden">
-          <ul
-            className={`flex gap-3 ${ITC_Font.className} font-normal text-sm invisible`}
-          >
+        <div className={`max-sm:hidden  ${ITC_Font.className}`}>
+          <ul className={`flex gap-3 font-normal text-sm invisible items-center`}>
             {linkData.map((item, index) => (
               <Link key={index} href={item.url}>
                 {item.name}
               </Link>
             ))}
+            <Cart />
           </ul>
         </div>
       </div>

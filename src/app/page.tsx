@@ -7,8 +7,12 @@ import FrameAnArt from "@/components/FrameAnArt";
 import LetConnect from "@/components/LetConnect";
 import G from "@/components/animations/G";
 import CustomSwiper from "@/components/animations/swipper/Slide";
+import { useEffect } from "react";
+import { updateInitState } from "@/_redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 export default function Home() {
+  
   return (
     <main className="w-full overflow-hidden">
       <section className="w-full relative">
@@ -38,4 +42,10 @@ export default function Home() {
       </section>
     </main>
   );
+}
+function dispatch(arg0: {
+  payload: import("@/_redux/slices/cartSlice").Product[];
+  type: "cart/updateInitState";
+}) {
+  throw new Error("Function not implemented.");
 }
