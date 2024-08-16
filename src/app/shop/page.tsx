@@ -21,7 +21,7 @@ const page = () => {
   }, [data, isSuccess]);
 
   return (
-    <div className="min-h-dvh">
+    <div className="min-h-screen">
       <GenericBanner bannerImgUrl="/images/shop.png" bannerTitle="Shop" />
       <div className="flex justify-center">
         <Container className="bg-white mt-10">

@@ -19,7 +19,7 @@ const LoginPage = () => {
       const res = await validateUser(token).unwrap();
       console.log(res)
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   };
 

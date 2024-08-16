@@ -67,6 +67,18 @@ const Render = ({ field, props }: { field: any; props: CustomProps }) => {
           />
         </FormControl>
       );
+    case FormFiedType.STATE:
+      return (
+        <FormControl className="">
+          <Input
+            placeholder={placeholder}
+            {...field}
+            className={`rounded-xs placeholder:text-form-soft ${Source_Sans_Pro_400.className} text-md uppercase`}
+            type="text"
+            maxLength={2}
+          />
+        </FormControl>
+      );
     default:
       break;
   }

@@ -76,7 +76,7 @@ const ProductTable = ({ product, isLoading, isSuccess }: any) => {
               </TableCell>
               <TableCell>{p.name}</TableCell>
               <TableCell>{formatCurrency(p.price / 100)}</TableCell>
-              <TableCell>0</TableCell>
+              <TableCell>{p.quantity}</TableCell>
               <TableCell>
                 <DropdownMenu>
                   <DropdownMenuTrigger>

@@ -24,6 +24,7 @@ import { IoMdCloseCircleOutline } from "react-icons/io";
 import { CheckoutBtn } from "./RadioButton";
 import Link from "next/link";
 import Cookies from 'js-cookie';
+import { generateOrderReference } from "../../utils/orderReferenceGenerator";
 
 export const Counter = ({ id, quantity }: { id: string; quantity: number }) => {
   const dispatch = useDispatch();
@@ -182,8 +183,10 @@ export default function CartModal() {
 
 const CheckoutLink = ({ name }: { name: string }) => {
   const dispatch = useDispatch();
+  //generate reference number
+  const order = generateOrderReference(8)
   return (
-    <Link href={"/order"} onClick={() => dispatch(openCartModal())}>
+    <Link href={`/order/${order}`} onClick={() => dispatch(openCartModal())}>
       <button className="bg-black text-white text-xs py-3 mt-2 font-semibold w-full uppercase border">
         {name}
       </button>

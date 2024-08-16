@@ -6,16 +6,18 @@ import { userApi } from "../services/userApi";
 import  userReducer from '../slices/userSlice'
 import productSlice from "../slices/productSlice";
 import cartSlice from '../slices/cartSlice'
+import { orderApi } from "../services/ordersApi";
 
 
 export const store = configureStore({
     reducer: {
         [productApi.reducerPath]: productApi.reducer,
         [userApi.reducerPath]: userApi.reducer,
+        [orderApi.reducerPath]: orderApi.reducer,
         user: userReducer,
         product: productSlice,
         cart: cartSlice
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([productApi.middleware, userApi.middleware])
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([productApi.middleware, userApi.middleware, orderApi.middleware])
 })
 setupListeners(store.dispatch)

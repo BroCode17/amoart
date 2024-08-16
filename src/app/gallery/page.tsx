@@ -8,7 +8,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='min-h-svh'>
+    <div className='min-h-screen'>
         <GenericBanner bannerImgUrl="/images/galley.png" bannerTitle="Gallery" />
         <Gallery />   
     </div>

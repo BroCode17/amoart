@@ -79,8 +79,8 @@ const AdminDashboard = () => {
   return (
     <>
      
-      <div className="min-h-svh flex justify-center items-center w-full bg-green-400">
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 bg-red-500">
+      <div className="min-h-svh flex justify-center items-center w-full ">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 ">
           <DashboardCard
             title="Active Products"
             subtitle={`Inactive: ${inactiveProducts}`}
@@ -90,6 +90,12 @@ const AdminDashboard = () => {
           <DashboardCard
             title="Sales"
             subtitle="Orders"
+            body={"hello"}
+            loading={acLoading || inLoading}
+          />
+          <DashboardCard
+            title="Orders"
+            subtitle="Pending"
             body={"hello"}
             loading={acLoading || inLoading}
           />

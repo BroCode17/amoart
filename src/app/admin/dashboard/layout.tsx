@@ -12,7 +12,7 @@ export default function AdimLayout({
 }>) {
   return (
     <Protected>
-      <div className="flex">
+      <div className="flex h-screen">
         <AdminSideBar />
         <div className="ml-10 w-full">{children}</div>
       </div>

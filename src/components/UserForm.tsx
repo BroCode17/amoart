@@ -14,7 +14,8 @@ import { useToast } from "@/app/shop/_components/toast-context";
 export enum FormFiedType {
   NAME = "username",
   DESC = "desc",
-  ZIP = "zip"
+  ZIP = "zip",
+  STATE = 'state',
 }
 
 const formSchema = z.object({
