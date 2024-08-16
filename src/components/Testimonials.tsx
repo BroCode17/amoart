@@ -8,11 +8,17 @@ import Container from "./Container";
 
 const Testimonials = () => {
   return (
-    <Container>
-       <IntroBox className="mt-10" title="Testimonails" description="Collection of art curated by Amo-Mensah Amofa. Artwork designed as
-              more than a display but meant to ignite conversations" />
+
+     
+      <Container>
+        <IntroBox
+          className="mt-10"
+          title="Testimonails"
+          description="Collection of art curated by Amo-Mensah Amofa. Artwork designed as
+         more than a display but meant to ignite conversations"
+        />
         <div className="  flex flex-col-reverse md:flex-row gap-4 ">
-          <div className="flex flex-row md:flex-col gap-5 md:w-[36%]" >
+          <div className="flex flex-row md:flex-col gap-5 md:w-[36%]">
             <TestCard />
             <TestCard />
           </div>
@@ -21,7 +27,8 @@ const Testimonials = () => {
             Video
           </div>
         </div>
-    </Container>
+      </Container>
+  
   );
 };
 

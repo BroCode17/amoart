@@ -46,16 +46,16 @@ const Gallery = () => {
                   className={` ${sizeClass} md:p-0 relative` }
                   ref={ref}
                 >
-                  {!inView && (
+                  {/* {!inView && (
                     <div className="flex justify-center items-center h-full absolute inset-0 left-0 right-0">
                       <div className="w-12 h-12 border-4 border-soft border-dotted rounded-full animate-spin" ></div>
                     </div>
-                  )}
+                  )} */}
                   <div className="w-full h-full" >
                     <ImageContainer
                       imgUrl={item.url}
                       text={item.url}
-                      className={`opacity-0 ${inView && "opacity-100"}`}
+                      // className={`opacity-0 ${inView && "opacity-100"}`}
                     />
                   </div>
                 </div>

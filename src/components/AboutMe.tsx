@@ -6,9 +6,9 @@ import Image from "next/image";
 
 const AboutMe = () => {
   return (
-    <div className="text-black flex justify-center mt-20 px-10 md:px-0">
+    <div className="text-black flex justify-center mt-20 max-md:px-2 max-lg:p-6 overflow-hidden">
       <Container className="bg-white">
-        <div className="grid grid-cols-2 gap-10 max-sm:grid-cols-1">
+        <div className="grid grid-cols-2 gap-6 max-sm:grid-cols-1">
           <div className="flex flex-col gap-2 text-justify text-sm">
             <p>
               Amo-Mensah was born in Agona, Ghana and is a self-taught artist

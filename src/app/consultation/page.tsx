@@ -26,7 +26,7 @@ const BrandCard = ({
   return (
     <div
       className={cn(
-        `h-[490px] md:h-[570px]  ${Source_Sans_Pro_400.className}
+        `h-[490px] md:h-[570px] max-md:w-full bg-green-500 ${Source_Sans_Pro_400.className}
         `
       )}
     >
@@ -46,7 +46,7 @@ const page = () => {
         bannerImgUrl="/images/shop.png"
         bannerTitle="Consultation"
       />
-      <div className="w-ful flex justify-center items-center px-3 xl:px-0">
+      <div className="w-ful flex justify-center items-center px-1 md:px-3 xl:px-0">
         <Container className="bg-white mt-20  ">
           <div className="">
             <div className="flex gap-8 flex-col md:flex-row md:items-center">
@@ -154,7 +154,7 @@ const page = () => {
           {/* Explore Brand */}
           <div className="mt-10">
             <HeadTitle title="Explore Our Consulation Projects"  className="text-xl p-0 m-0 flex justify-start"/>
-            <div  className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div  className="mt-10 flex max-md:overflow-x-scroll md:grid md:grid-cols-3 gap-4">
               <BrandCard
                 imgUrl="/images/PGLA.png"
                 alt="One"

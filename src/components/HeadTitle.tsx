@@ -12,7 +12,7 @@ const HeadTitle = ({
   return (
     <h1
       className={cn(
-        `pl-5 font-bold text-[30px] ${ITC_Font.className} text-center`,
+        `pl-5 font-bold text-[30px] ${ITC_Font.className} text-center max-md:pl-0`,
         className
       )}
     >

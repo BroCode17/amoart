@@ -55,14 +55,14 @@ const Card = (
           text={description}
           flag={flag}
         />
-        <div className="h-14 absolute w-full bg-white bg-opacity-80 bottom-0 left-0  overflow-hidden">
-          <div className="flex px-5 justify-between items-center py-2">
-            <div className="m-0 p-0">
-              <h1 className="my-0 py-0 font-bold text-sm">{price}</h1>
-              <p className="text-[0.675rem] ">{description}</p>
+        <div className="h-[4.15rem] sm:h-14 absolute w-full bg-white bg-opacity-80 bottom-0 left-0  overflow-hidden ">
+          <div className="flex justify-between items-center py-2 max-sm:flex-col sm:px-5">
+            <div className="m-0 p-0 max-sm:w-full max-sm:flex items-center gap-2">
+              <h1 className="max-sm:ml-1 my-0 py-0 font-bold text-sm">{price}</h1>
+              <p className="text-[0.675rem] ">{title}</p>
             </div>
-            <div className="bg-black text-white py-2 px-3 rounded-full cursor-pointer ">
-              <button className="cursor-pointer select-none">BUY NOW</button>
+            <div className="bg-black text-white py-2 px-3 md:rounded-full cursor-pointer max-sm:w-full ">
+              <button className="cursor-pointer select-none max-sm:text-xs">BUY NOW</button>
             </div>
           </div>
         </div>

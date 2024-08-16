@@ -27,7 +27,7 @@ const MyArtPieces = () => {
       })
       t1.to('.title', {
         opacity: 1,
-        duration: 2
+        duration: 1
       })
 
   
@@ -57,9 +57,9 @@ const MyArtPieces = () => {
 
   return (
     <section className=" flex justify-center mt-10" ref={myRef}>
-      <div className="grid  grid-cols-3 h-[600px] grid-rows-3 gap-3 w-[900px]">
+      <div className="grid  grid-cols-2 md:grid-cols-3 md:h-[600px] grid-rows-2 md:grid-rows-3 gap-3 w-[900px]">
         <Row2Image text="For Your Eyes Only" imgUrl={"brothers"} />
-        <div className="col-span-2 pt-5">
+        <div className=" md:col-span-2 pt-5">
           <div ref={ref}>
             <HeadTitle title="My Art Pieces" className={`title  opacity-0`} />
           </div>
@@ -75,7 +75,7 @@ const MyArtPieces = () => {
         </div>
         <Row2Image text="Fall of Man" imgUrl="fall" color="black" />
         <Row2Image text="Move with Me" imgUrl="oneman" />
-        <div className="bg-pink-500 relative">
+        <div className=" relative">
           <ImageContainer text="House of Blue" imgUrl="blue" />
           <span
             className={`absolute bottom-5 left-5  text-white font-bold text-sm ${ITC_Font.className}`}

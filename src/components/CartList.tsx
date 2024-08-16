@@ -25,6 +25,7 @@ import { CheckoutBtn } from "./RadioButton";
 import Link from "next/link";
 import Cookies from 'js-cookie';
 import { generateOrderReference } from "../../utils/orderReferenceGenerator";
+import { Input } from "./ui/input";
 
 export const Counter = ({ id, quantity }: { id: string; quantity: number }) => {
   const dispatch = useDispatch();
@@ -169,6 +170,7 @@ export default function CartModal() {
           )}
         </div>
         <div className="w-full">
+          <SearchOrderLink name="Search Order" />
           {cartItems.length > 0 && <CheckoutLink name="Check Out" />}
           {cartItems.length > 0 && (
             <p className="text-muted-foreground text-right ">
@@ -191,5 +193,18 @@ const CheckoutLink = ({ name }: { name: string }) => {
         {name}
       </button>
     </Link>
+  );
+};
+const SearchOrderLink = ({ name }: { name: string }) => {
+  const dispatch = useDispatch();
+  //generate reference number
+  const order = generateOrderReference(8)
+  return (
+    <div className="flex items-center gap-2">
+      <Input  className="rounded-none" placeholder="Order Reference Code"/>
+      <button className="bg-black text-white text-xs py-3 font-semibold w-full uppercase border">
+        {name}
+      </button>
+    </div>
   );
 };

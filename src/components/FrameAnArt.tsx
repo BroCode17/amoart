@@ -17,7 +17,7 @@ const FrameAnArt = () => {
     }
   }, [data, isSuccess]);
   return (
-    <Container className="bg-white">
+    <Container className="bg-white md:px-4 lg:px-0">
       <IntroBox
         className="text-black"
         title="Frame an Art"

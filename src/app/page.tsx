@@ -9,18 +9,18 @@ import G from "@/components/animations/G";
 import CustomSwiper from "@/components/animations/swipper/Slide";
 import { useEffect } from "react";
 import { updateInitState } from "@/_redux/slices/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { MobileNav } from "@/components/Header";
+import { setShowMobileNav } from "@/_redux/slices/headerSlice";
 
 export default function Home() {
-  
   return (
-    <main className="w-full overflow-hidden">
+    <main className="w-full overflow-hidden relative">
       <section className="w-full relative">
         {/* <Carosal /> */}
         <CustomSwiper />
       </section>
-
-      <section className="">
+      <section className="" id="#">
         <MyArtPieces />
       </section>
       <section className="mt-10  border h-[500px] lg:h-[550px]  w-full relative">
@@ -33,19 +33,13 @@ export default function Home() {
       <section className="flex justify-center mt-10">
         <FrameAnArt />
       </section>
-      <section className="bg-black flex justify-center">
+      <section className="bg-black flex justify-center md:px-4 lg:px-0">
         <Testimonials />
       </section>
 
-      <section>
+      <section className="max-md:px-1">
         <LetConnect />
       </section>
     </main>
   );
-}
-function dispatch(arg0: {
-  payload: import("@/_redux/slices/cartSlice").Product[];
-  type: "cart/updateInitState";
-}) {
-  throw new Error("Function not implemented.");
 }

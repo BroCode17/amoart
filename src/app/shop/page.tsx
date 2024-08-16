@@ -9,33 +9,43 @@ import { shopData } from "../../../utils/data";
 import Card from "@/components/Card";
 import { useGetAllProductQuery } from "@/_redux/services/productApi";
 import { formatCurrency, formatNumber } from "@/components/utils/formatters";
+import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
+
 
 const page = () => {
   const [product, setProduct] = useState([]);
   const { data, isSuccess, isLoading, isError } = useGetAllProductQuery("");
-
+  const [searchQuery, setSearchQuery] = useState('');
   useEffect(() => {
     if (isSuccess) {
       setProduct(data.data);
     }
   }, [data, isSuccess]);
 
+
+  const filteredProducts = product.filter(p =>
+  p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+
   return (
     <div className="min-h-screen">
       <GenericBanner bannerImgUrl="/images/shop.png" bannerTitle="Shop" />
-      <div className="flex justify-center">
+      <div className="flex justify-center md:px-4 lg:px-0">
         <Container className="bg-white mt-10">
           <div className="flex justify-between">
             <HeadTitle title="Buy an Art Piece" className="text-xl p-0 m-0" />
-            <FilterBox />
+            <div className="flex items-center justify-start border-black border pl-4">
+              <Search size={18} color="	#778899"/>
+              <Input  placeholder="Search" className="border-none outline-none" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-10 ">
             {isLoading && <div>Loading...</div>}
             {isError && <div>Error</div>}
 
             {isSuccess &&
-              product.map((item, index) => {
+              filteredProducts.map((item, index) => {
                 const amout = formatCurrency(item.price / 100);
                 return (
                   <Card

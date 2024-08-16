@@ -4,7 +4,7 @@ import ImageContainer from './ImageContainer';
 import { ITC_Font } from '@/app/local-fonts/local';
 const Row2Iamge = ({ text, imgUrl, color  }: Row2ImageParam) => {
   return (
-    <div className="bg-red-500 row-span-2 relative">
+    <div className=" row-span-2 relative">
       <ImageContainer text={text} imgUrl={imgUrl} />
       <span className={`${ITC_Font.className} absolute bottom-5 left-5 text-${color ? color : 'white'} font-bold text-sm`}>
         &quot;{text}&quot;

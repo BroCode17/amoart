@@ -14,6 +14,7 @@ const ImageContainer =  ({imgUrl, text, flag, ref, className}: Row2ImageParam) =
   // placeholder='blur'
   // blurDataURL={base64}
   className={cn(``, className)}
+  priority
   />
 )
 }
