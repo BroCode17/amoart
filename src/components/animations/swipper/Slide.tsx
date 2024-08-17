@@ -24,7 +24,7 @@ import { Button } from "@/components/ui/button";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import SlideNextButton from "./SwiperBtn";
 
-export default () => {
+ const Slide = () => {
   //   const [currSlide, setCurrSlide] = useState(0);
 
   // const nextSlide = () => {
@@ -93,3 +93,5 @@ export default () => {
     </div>
   );
 };
+
+export default Slide

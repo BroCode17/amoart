@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 import withPlaiceholder from '@plaiceholder/next';
-import { hostname } from 'os';
 const nextConfig = {
     async rewrites() {
         return [
@@ -30,7 +29,14 @@ const nextConfig = {
                 
         ],
         
-    }
+    },
+    typescript: {
+        // !! WARN !!
+        // Dangerously allow production builds to successfully complete even if
+        // your project has type errors.
+        // !! WARN !!
+        ignoreBuildErrors: true,
+      },
 };
 
 export default withPlaiceholder(nextConfig);

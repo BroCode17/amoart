@@ -1,39 +1,30 @@
 "use client";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import React, { useEffect, useState } from "react";
 import {
   useGetActiveProductQuery,
-  useGetAllProductQuery,
   useGetInActiveProductQuery,
 } from "@/_redux/services/productApi";
 import { formatNumber } from "@/components/utils/formatters";
-import { useSelector } from "react-redux";
-import { useRouter } from "next/navigation";
-import LoginPage from "../page";
-import Protected from "../_components/Protected";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
 
 export const dynamic = "force-dynamic";
 
 type DashboardBoardProps = {
-  title: string;
-  subtitle: string;
-  body: string;
-  loading: boolean;
+  title?: string;
+  subtitle?: string;
+  body?: string;
+  loading?: boolean;
 };
 
-export const DashboardCard = ({
+const DashboardCard = ({
   title,
   subtitle,
   body,
-  loading,
+  loading
 }: DashboardBoardProps) => {
   return (
+    <div>
     <Card className="">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
@@ -41,6 +32,7 @@ export const DashboardCard = ({
       </CardHeader>
       <CardContent>{loading ? <p>Loading...</p> : <p>{body}</p>}</CardContent>
     </Card>
+    </div>
   );
 };
 
@@ -92,8 +84,8 @@ const AdminDashboard = () => {
             subtitle="Orders"
             body={"hello"}
             loading={acLoading || inLoading}
-          />
-          <DashboardCard
+          /> 
+           <DashboardCard
             title="Orders"
             subtitle="Pending"
             body={"hello"}

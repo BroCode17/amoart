@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
 
-const page = () => {
+const ShopPage = () => {
   const [product, setProduct] = useState([]);
   const { data, isSuccess, isLoading, isError } = useGetAllProductQuery("");
   const [searchQuery, setSearchQuery] = useState('');
@@ -66,4 +66,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ShopPage;

@@ -99,14 +99,17 @@ const Text = ({ order }: { order: any }) => {
 };
 
 const OrderStatusModal = ({ show, setShow, orderRef }: any) => {
-  if (!show) return;
+ 
 
   const [shipState, setShipState] = useState<string>("pending");
   const [trackingNumber, setTrackingNumber] = useState<string>("");
-  console.log(orderRef)
+  
+  if (!show) return;
+
   const handleSetShipState = (value: any) => {
     setShipState(value);
   };
+
 
   const onSubmit = (e: any) => {
     e.preventDefault();
