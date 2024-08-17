@@ -37,6 +37,7 @@ const nextConfig = {
         // !! WARN !!
         ignoreBuildErrors: true,
       },
+      output: "export",
 };
 
 export default withPlaiceholder(nextConfig);
